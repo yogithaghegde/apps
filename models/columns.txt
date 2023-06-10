@@ -1,0 +1,8 @@
+#Store - 14
+#Date - 24-12-2010
+#Weekly_Sales - 3818686.45
+#Holiday_Flag - 0
+#Temperature - 30.59
+#Fuel_Price - 3.141
+#CPI – 182.54459
+#Unemployment - 8.724
