@@ -8,7 +8,7 @@ import datetime
 
 
 def load_data():
-    data = pd.read_csv(r'C:\Users\Yogitha Hegde\OneDrive\Desktop\models\Walmart.csv')
+    data = pd.read_csv(r'Walmart.csv')
     return data
 
 
