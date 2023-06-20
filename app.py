@@ -10,7 +10,8 @@ import datetime
 def load_data():
     data = pd.read_csv(r'Walmart.csv')
     return data
-
+dataforcorr = data.drop(columns=['Date'],inplace=True)
+corr_matrix = dataforcorr.corr()
 
 def display_line_chart(data):
     fig, ax = plt.subplots()
@@ -37,8 +38,7 @@ def display_bar_chart(data):
     st.pyplot(fig)
 
 def display_heatmap(data):
-    dataforcorr = data.drop(columns=['Date'],inplace=True)
-    corr_matrix = dataforcorr.corr()
+
     fig, ax = plt.subplots()
     sns.heatmap(corr_matrix,linewidths=0.5,ax=ax)
     st.pyplot(fig)
