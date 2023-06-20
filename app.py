@@ -7,7 +7,7 @@ import seaborn as sns
 import datetime
 
 data = pd.read_csv(r'Walmart.csv')
-corrmatrix = data.corr()
+corrmatrix = data.drop(columns=['Date'],inplace=True).corr()
 
 
 def display_line_chart(data):
