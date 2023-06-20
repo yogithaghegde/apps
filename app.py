@@ -6,11 +6,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import datetime
 
-
-def load_data():
-    data = pd.read_csv(r'Walmart.csv')
-
-    return data
+data = pd.read_csv(r'Walmart.csv')
+corrmatrix = data.corr()
 
 
 def display_line_chart(data):
