@@ -9,8 +9,7 @@ import datetime
 
 def load_data():
     data = pd.read_csv(r'Walmart.csv')
-    dataforcorr = data.drop(columns=['Date'],inplace=True)
-    corr_matrix = dataforcorr.corr()
+
     return data
 
 
@@ -70,6 +69,8 @@ def main():
     data = load_data()
     st.write(data)
     questions = ['What is the sales trend?','Top 5 stores with highest sales','Display Heatmap','Relation between holidays and sales']
+    dataforcorr = data.drop(columns=['Date'],inplace=True)
+    corr_matrix = dataforcorr.corr()
     EDA = st.sidebar.selectbox("INSIGHTS",(questions[0],questions[1],questions[2],questions[3]))
 
     if EDA == questions[0]:
