@@ -37,8 +37,9 @@ def display_bar_chart(data):
     st.pyplot(fig)
 
 def display_heatmap(data):
+    corr_matrix = data.corr()
     fig, ax = plt.subplots()
-    sns.heatmap(data.corr(),linewidths=0.5,ax=ax)
+    sns.heatmap(corr_matrix,linewidths=0.5,ax=ax)
     st.pyplot(fig)
 
 def display_box_chart(data):
@@ -65,6 +66,7 @@ def main():
     st.title("WALMART SALES PREDICTION")
 
     data = load_data()
+    st.write(data)
     questions = ['What is the sales trend?','Top 5 stores with highest sales','Display Heatmap','Relation between holidays and sales']
     EDA = st.sidebar.selectbox("INSIGHTS",(questions[0],questions[1],questions[2],questions[3]))
 
