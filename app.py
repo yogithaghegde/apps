@@ -37,7 +37,8 @@ def display_bar_chart(data):
     st.pyplot(fig)
 
 def display_heatmap(data):
-    corr_matrix = data.corr()
+    dataforcorr = data.drop(columns=['Date'],inplace=True)
+    corr_matrix = dataforcorr.corr()
     fig, ax = plt.subplots()
     sns.heatmap(corr_matrix,linewidths=0.5,ax=ax)
     st.pyplot(fig)
