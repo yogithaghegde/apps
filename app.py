@@ -9,7 +9,8 @@ import datetime
 def load_data():
     data = pd.read_csv(r'Walmart.csv')
     corrmatrix = data.drop(columns=['Date'],inplace=True).corr()
-return data,corrmatrix
+    
+    return data,corrmatrix
 
 
 def display_line_chart(data):
