@@ -40,7 +40,7 @@ def display_bar_chart(data):
 def display_heatmap(data):
 
     fig, ax = plt.subplots()
-    sns.heatmap(corr_matrix,linewidths=0.5,ax=ax)
+    sns.heatmap(data.corr(),linewidths=0.5,ax=ax)
     st.pyplot(fig)
 
 def display_box_chart(data):
@@ -69,8 +69,6 @@ def main():
     data = load_data()
     st.write(data)
     questions = ['What is the sales trend?','Top 5 stores with highest sales','Display Heatmap','Relation between holidays and sales']
-    dataforcorr = data.drop(columns=['Date'],inplace=True)
-    corr_matrix = dataforcorr.corr()
     EDA = st.sidebar.selectbox("INSIGHTS",(questions[0],questions[1],questions[2],questions[3]))
 
     if EDA == questions[0]:
